@@ -2,6 +2,8 @@
 {
   # Nix configuration ------------------------------------------------------------------------------
 
+  system.stateVersion = 4;
+
   nix.settings.substituters = [
     "https://cache.nixos.org/"
   ];
