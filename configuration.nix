@@ -13,7 +13,6 @@
   nix.settings.trusted-users = [
     "@admin"
   ];
-  nix.configureBuildUsers = true;
 
   nixpkgs.config.allowUnfree = true; 
   users.users.phil = {
@@ -31,9 +30,6 @@
 
   # Create /etc/bashrc that loads the nix-darwin environment.
   programs.zsh.enable = true;
-
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
 
   homebrew = {
     enable = true;
@@ -55,10 +51,12 @@
   homebrew.brews = [
     "chamber"
     "coder"
+    "deno"
     "k9s"
     "mas"
     "nvm"
     "parallel"
+    "powerpipe"
     "pulumi"
     "sops"
     "steampipe"

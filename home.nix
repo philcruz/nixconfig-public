@@ -8,6 +8,7 @@
     packages = with pkgs; [
       autojump
       aws-iam-authenticator
+      ssm-session-manager-plugin
       aws-vault
       awscli2
       bun
@@ -34,6 +35,7 @@
     file.".steampipe/config/googlesheets.spc".source = ./steampipe/config/googlesheets.spc;
     file.".steampipe/config/jira.spc".source = ./steampipe/config/jira.spc;
     file.".steampipe/config/jira_pmi.spc".source = ./steampipe/config/jira_pmi.spc;
+    file.".steampipe/config/sentry.spc".source = ./steampipe/config/sentry.spc;
     file.".steampipe/config/slack.spc".source = ./steampipe/config/slack.spc;
     file.".steampipe/config/snowflake.spc".source = ./steampipe/config/snowflake.spc;
     file.".steampipe/config/steampipe.spc".source = ./steampipe/config/steampipe.spc;
@@ -134,7 +136,7 @@
 
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [      
+    profiles.default.extensions = with pkgs.vscode-extensions; [      
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "coder-remote";
